@@ -1,0 +1,90 @@
+﻿@model AccountDetailsViewModel
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<section id="account-details">
+    <div class="container">
+
+        <aside>
+            <partial name="~/Views/Account/_AccountProfile.cshtml" />
+        </aside>
+
+        <div class="account-info">
+
+            @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+            {
+                <div class="alert alert-danger">
+                    @TempData["StatusMessage"]
+                </div>
+            }
+
+            <h2>Account Details</h2>
+            <div class="basic-info">
+                <h5>Basic Info</h5>
+                <form method="post" asp-action="UpdateBasicInfo" asp-controller="Account">
+                    <div class="first-name">
+                        <label asp-for="Basic!.FirstName"></label>
+                        <input asp-for="Basic!.FirstName" />
+                        <span asp-validation-for="Basic!.FirstName"></span>
+                    </div>
+                    <div class="last-name">
+                        <label asp-for="Basic!.LastName"></label>
+                        <input asp-for="Basic!.LastName" />
+                        <span asp-validation-for="Basic!.LastName"></span>
+                    </div>
+                    <div class="email">
+                        <label asp-for="Basic!.Email"></label>
+                        <input asp-for="Basic!.Email" />
+                        <span asp-validation-for="Basic!.Email"></span>
+                    </div>
+                    <div class="phone">
+                        <label asp-for="Basic!.PhoneNumber"></label>
+                        <input asp-for="Basic!.PhoneNumber" />
+                    </div>
+                    <div class="bio">
+                        <label asp-for="Basic!.Bio">Bio <span>(optional)</span></label>
+                        <textarea asp-for="Basic!.Bio"></textarea>
+                    </div>
+                    <div class="buttons">
+                        <button class="btn-gray" type="reset">Cancel</button>
+                        <button class="btn-theme" type="submit">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class="address-info">
+                <h5>Address</h5>
+                <form method="post" asp-action="UpdateAddressInfo" asp-controller="Account">
+                    <div class="address-line-1">
+                        <label asp-for="Address!.AddressLine_1"></label>
+                        <input asp-for="Address!.AddressLine_1" />
+                        <span asp-validation-for="Address!.AddressLine_1"></span>
+                    </div>
+                    <div class="address-line-2">
+                        <label asp-for="Address!.AddressLine_2"><span> (optional)</span></label>
+                        <input asp-for="Address!.AddressLine_2" />
+                        <span asp-validation-for="Address!.AddressLine_2"></span>
+                    </div>
+                    <div class="postal-code">
+                        <label asp-for="Address!.PostalCode"></label>
+                        <input asp-for="Address!.PostalCode" />
+                        <span asp-validation-for="Address!.PostalCode"></span>
+                    </div>
+                    <div class="city">
+                        <label asp-for="Address!.City"></label>
+                        <input asp-for="Address!.City" />
+                    </div>
+                    <div class="buttons">
+                        <button class="btn-gray" type="button">Cancel</button>
+                        <button class="btn-theme" type="submit">Save Changes</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
