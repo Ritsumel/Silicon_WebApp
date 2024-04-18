@@ -10,7 +10,7 @@
             <div class="profile-picture">
                 <img src="~/images/uploads/profiles/@user.ProfileImage" alt="@user.FirstName @user.LastName" />
 
-                <form enctype="multipart/form-data" method="post" asp-action="UploadProfileImage" asp-controller="Account">
+                <form enctype="multipart/form-data" method="post" asp-action="UploadProfileImages" asp-controller="Account">
                     <input id="fileUploader" type="file" name="file" hidden />
                     <label for="fileUploader" class="refresh-btn"><img class="refresh-icon" src="~/images/icons/refresh-icon.svg"></label>
                 </form>
