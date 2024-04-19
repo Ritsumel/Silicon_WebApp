@@ -1,0 +1,57 @@
+﻿@model SubscribeViewModel
+
+<section id="newsletter">
+    <div class="container">
+        <div class="headline">
+            <h1>Don't Want to Miss Anything?</h1>
+            <img src="~/images/icons/purple-arrow.svg" alt="swirl arrow" />
+        </div>
+
+        <form method="post" asp-action="Subscribe" asp-controller="Default">
+            <div class="box">
+                <h5>Sign up for Newsletters</h5>
+                <div class="checkboxes">
+                    <div class="form-check">
+                        <input asp-for="DailyNewsletter" type="checkbox" class="form-check-input" />
+                        <label asp-for="DailyNewsletter">Daily Newsletter</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="AdvertisingUpdates" type="checkbox" class="form-check-input" />
+                        <label asp-for="AdvertisingUpdates">Event Updates</label>
+                    </div>
+                </div>
+                <div class="checkboxes">
+                    <div class="form-check">
+                        <input asp-for="WeekinReview" type="checkbox" class="form-check-input" />
+                        <label asp-for="WeekinReview">Advertising Updates</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="EventUpdates" type="checkbox" class="form-check-input" />
+                        <label asp-for="EventUpdates">Startups Weekly</label>
+                    </div>
+                </div>
+                <div class="checkboxes">
+                    <div class="form-check">
+                        <input asp-for="StartupsWeekly" type="checkbox" class="form-check-input"/>
+                        <label asp-for="StartupsWeekly">Week in Review</label>
+                    </div>
+                    <div class="form-check">
+                        <input asp-for="Podcasts" type="checkbox" class="form-check-input" />
+                        <label asp-for="Podcasts">Podcasts</label>
+                    </div>
+                </div>
+            </div>
+            <div class="subscribe">
+                @if (!string.IsNullOrEmpty(TempData["StatusMessage"]?.ToString()))
+                {
+                    <span class="status-message">@TempData["StatusMessage"]</span>
+                }
+                <div class="input-wrapper">
+                    <input asp-for="Email" />
+                    <button type="submit" class="btn-theme">Subscribe*</button>
+                </div>
+                <p><span>*</span> Yes, I agree to the <a href="/terms">terms</a> and <a href="/policy">privacy policy</a>.</p>
+            </div>
+        </form>
+    </div>
+</section>

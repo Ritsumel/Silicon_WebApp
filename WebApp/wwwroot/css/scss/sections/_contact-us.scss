@@ -1,0 +1,185 @@
+#contact-us {
+    background-color: $gray-100;
+
+    .container {
+        position: relative;
+        padding-bottom: 100px;
+
+        .category {
+            padding-top: 40px;
+            padding-bottom: 32px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+
+            @include lg { justify-content: flex-start; }
+    
+            a {
+                text-decoration: none;
+                color: $gray-600;
+                margin-top: -4px;
+    
+                &:hover { color: $theme; }
+    
+                &.active { color: $theme; }
+            }
+    
+            .home {
+                height: 18px;
+                width: 18px;
+                margin-right: 5px;
+                margin-bottom: 2px;
+            }
+    
+            .next {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            @include lg { grid-template-columns: 1fr 1fr; gap: 50px; }
+            @include xl { gap: 0; }
+
+            .contact-info {
+                padding-bottom: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @include lg { padding-bottom: 0; align-items: start; }
+
+                h1 { 
+                    @include h2;
+                    padding-bottom: 50px;
+
+                    @include lg { @include h1; }
+                }
+
+                .contact-card {
+                    display: flex;
+                    gap: 24px;
+                    height: 162px;
+                    width: 390px;
+                    margin-bottom: 15px;
+
+                    img {
+                        height: 60px;
+                        width: 60px;
+                    }
+
+                    .texts {
+
+                        a {
+                            text-decoration: none;
+
+                            &:hover { text-decoration: underline; }
+
+                            img {
+                                height: 24px;
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .contact-forms {
+                right: 0;
+                height: 848px;
+                width: 100%;
+                background-color: $white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.059);
+                border-radius: 10px;
+                padding: 72px 72px 53px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @include xl { position: absolute; width: 636px; }
+
+                form {
+
+                    label { 
+                        display: block;
+                        color: $gray-900;
+                        outline: none;
+                        font-weight: 700;
+                        padding-bottom: 5px;
+
+                        span { color: $gray-600; }
+                    }
+
+                    input {
+                        display: block;
+                        height: 52px;
+                        width: 100%;
+                        outline: none;
+                        border: 1px solid $gray-400;
+                        border-radius: 10px;
+                        padding: 0 20px 0;
+                        margin-bottom: 24px;
+
+                        &::placeholder {
+                            color: $gray-500;
+                        }
+                    }
+
+                    select {
+                        height: 52px;
+                        width: 100%;
+                        outline: none;
+                        border-radius: 10px;
+                        padding: 0 20px 0;
+                        border: none;
+                        border-right: 15px solid transparent;
+                        outline: 1px solid $gray-400;
+                        color: $gray-500;
+                        margin-bottom: 24px;
+
+                        option {
+                            color: $gray-800;
+                        }
+                    }
+
+                    .message-input {
+
+                        textarea {
+                            height: 149px;
+                            width: 100%;
+                            outline: none;
+                            border: 1px solid $gray-400;
+                            border-radius: 10px;
+                            padding: 15px 20px 15px;
+                            margin-bottom: 24px;
+
+                            @include xl { height: 199px; }
+
+                            &::placeholder {
+                                color: $gray-500;
+                            }
+                        }
+                    }
+
+                    .btn-theme-shadow {
+                        height: 52px;
+                        width: 100%;
+
+                        @include lg {
+                            width: 237px;
+                            @include text-m;
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}

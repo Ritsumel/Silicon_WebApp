@@ -1,0 +1,39 @@
+#error {
+    padding-top: 50px;
+    padding-bottom: 20px;
+
+    @include lg {
+        padding-top: 220px;
+        padding-bottom: 60px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 100%;
+            max-width: 500px;
+            padding-bottom: 30px
+        }
+
+        h1 { @include d5; }
+
+        p { @include text-xl; padding-bottom: 40px; }
+
+        a {
+            gap: 10px;
+            height: 52px;
+            width: 100%;
+            
+            @include lg {
+                width: 221px;
+            }
+             
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}

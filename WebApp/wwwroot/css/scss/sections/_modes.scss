@@ -1,0 +1,120 @@
+#modes {
+    padding-top: 100px;
+    padding-bottom: 140px;
+    height: 100%;
+    background: linear-gradient(90deg, $gray-900 50%, $white 50%);
+    position: relative;
+
+    .vl {
+        position: absolute;
+        border-left: 3px solid $theme;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-100%);
+
+        .purple-circle {
+            height: 36px;
+            width: 36px;
+            background-color: $theme;
+            border-radius: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+
+            img {
+                height: 20px;
+                width: 20px;
+                margin: 8px;
+            }
+        }
+    }
+
+    .container {
+        text-align: center;
+        justify-content: center;
+
+        .texts {
+            display: flex;
+            justify-content: center;
+            margin-left: 18px;
+
+            @include md {
+                margin-left: 22px;
+            }
+
+            @include lg {
+                margin-left: 25px;
+            }
+
+            @include xl {
+                margin-left: 30px;
+            }
+
+            #text-white {
+                @include h3;
+                color: $white;
+                margin: 10px;
+
+                @include md {
+                    @include h2;
+                    color: $white;
+                    margin: 10px;
+                }
+
+                @include lg {
+                    @include h2;
+                    color: $white;
+                    margin: 10px;
+                }
+
+                @include xl {
+                    @include h1;
+                    color: $white;
+                    margin: 10px;
+                }
+            }
+    
+            #text-black {
+                @include h3;
+                margin: 10px;
+
+                @include md {
+                    @include h2;
+                    margin: 10px;
+                }
+
+                @include lg {
+                    @include h2;
+                    margin: 10px;
+                }
+
+                @include xl {
+                    @include h1;
+                    margin: 10px;
+                }
+            }
+        }
+
+        img {
+            padding-top: 70px;
+            margin-left: -3px;
+
+            @include md {
+                margin-left: -3px;
+            }
+
+            @include lg {
+                width: 80%;
+                margin-right: 3px;
+            }
+
+            @include xl {
+                width: 85%;
+                margin-right: 4px;
+            }
+        }
+    }
+}

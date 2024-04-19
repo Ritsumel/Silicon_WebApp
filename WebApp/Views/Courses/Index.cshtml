@@ -1,0 +1,100 @@
+﻿@model CourseIndexViewModel
+@{
+    ViewData["Title"] = "Courses";
+}
+
+    <section id="courses">
+        <div class="container">
+            
+            <div class="category">
+                <a class="nav-link" href="/Index.html"><img class="home" src="/images/icons/home-icon.svg">Home</a>
+                <img class="next" src="/images/icons/next-icon.svg">
+                <a class="nav-link active" href="/courses/Courses.html">Courses</a>
+            </div>
+
+            <div class="navigation">
+                <h1 class="my-4">Courses</h1>
+                <div class="bars">
+                    <div class="select-box">
+                        <select>
+                            <option value="" disabled selected>All categories</option>
+                            <option value="category1">Category 1</option>
+                            <option value="category2">Category 2</option>
+                            <option value="category3">Category 3</option>
+                        </select>
+                    </div>
+                    <div class="search-bar">
+                        <form action="/search" method="get">
+                            <input id="searchQuery" name="searchQuery" placeholder="Search courses">
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid">
+
+                @if (Model.Courses != null)
+                {
+                    @foreach(var course in Model.Courses)
+                    {
+                        <a asp-action="Details" asp-controller="Courses" asp-route-id="@course.Id">
+                            <div class="course-card">
+                                <div class="course-card-image">
+                                @if (course.IsBestseller)
+                                {
+                                    <div class="best-seller-tag"><p>Best Seller</p></div>
+                                }                       
+                                    <img src="~/images/courses/@course.Image" alt="@course.Title" />
+                                    <button class="bookmark-tag"><i class="fa-regular fa-bookmark"></i></button>
+                                </div>
+                                <div class="course-card-body">
+                                    <h2 class="h5">@course.Title</h2>
+                                    <p class="text-s">@course.Author</p>
+                                    <div class="pricing">
+                                        @if (!string.IsNullOrEmpty(course.DiscountPrice))
+                                        {
+                                            <span class="old-price">@course.DiscountPrice</span>
+                                        }
+                                        <div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enabled" : "")">@course.Price</div>
+                                    </div>
+                                    <hr>
+                                </div>
+                                <div class="course-card-footer">
+                                    <div>
+                                        <p><img src="~/images/icons/time-icon.svg" />@course.Hours hours</p>
+                                    </div>
+                                    <div>
+                                        <p><img src="~/images/icons/thumbs-up-icon.svg" />@course.LikesInProcent (@course.LikesInNumbers)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+
+            <nav>
+                <a href="#"><div class="pagination-single-scroll"><p><img src="/images/icons/page-scroller-left-icon.svg"></p></div></a>
+                <a href="#"><div class="pagination-single"><p>1</p></div></a>
+                <a href="#"><div class="pagination-single"><p>2</p></div></a>
+                <a href="#"><div class="pagination-single active"><p>3</p></div></a>
+                <a href="#"><div class="pagination-single"><p>4</p></div></a>
+                <a href="#"><div class=" pagination-single-scroll"><p><img src="/images/icons/page-scroller-right-icon.svg"></p></div></a>
+            </nav>
+
+        </div>
+    </section>
+
+    <section id="work-with-us">
+        <div class="container">
+            <div class="box">
+                <p>Ready to get started?</p>
+                <h1>Take Your <span>Skills</span> to the Next Level</h1>
+                <a class="btn-theme-s" href="#">Work with us</a>
+            </div>
+            <div class="image">
+                <img src="~/images/desk-computer-illustration.svg" />
+            </div>
+        </div>
+    </section>

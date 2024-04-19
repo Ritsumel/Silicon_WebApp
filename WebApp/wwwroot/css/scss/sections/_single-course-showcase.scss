@@ -1,0 +1,166 @@
+#single-course-showcase {
+    background-image: url('/images/single-course-showcase-image.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 677px;
+    width: 100%;
+
+    .container {
+
+        .showcase-header {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding-top: 40px;
+
+            @include lg { justify-content: flex-start; }
+    
+            a {
+                text-decoration: none;
+                color: $gray-600;
+                margin-top: -4px;
+                font-size: 14px;
+
+                &:hover { color: $white; }
+    
+                &.active { color: $white; }
+            }
+    
+            .home {
+                height: 18px;
+                width: 18px;
+                margin-right: 5px;
+                margin-bottom: 2px;
+            }
+    
+            .next {
+                height: 16px;
+                width: 16px;
+            }
+        }
+
+        .showcase-body {
+            padding-top: 70px;
+            
+            .tags {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+
+                @include lg { justify-content: flex-start; }
+
+                .best-seller-tag {
+                    height: 22px;
+                    width: 86px;
+                    background-color: #22C55E;
+                    border-radius: 5px;
+    
+                    p {
+                        @include text-s;
+                        color: #FFFFFF;
+                        padding-left: 8px;
+                    }
+                }
+
+                .digital-tag {
+                    height: 22px;
+                    width: 60px;
+                    background-color: $white;
+                    border-radius: 5px;
+
+                    p {
+                        @include text-s;
+                        color: #33354D;
+                        padding-left: 8px;
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            .texts {
+                padding-top: 16px;
+                text-align: center;
+
+                @include lg { text-align: start; }
+
+                h1 {
+                    @include h2;
+                    color: $white;
+
+                    @include md { @include h1; color: $white; }
+                }
+
+                p {
+                    @include text-lg;
+                    color: $white;
+                    opacity: 70%;
+                }
+            }
+
+            .stats {
+                display: flex;
+                justify-content: center;
+                padding-top: 40px;
+
+                @include lg { justify-content: flex-start; }
+
+                p {
+                    @include text-m;
+                    color: $gray-500;
+                    margin-top: -4px;
+                    margin-left: 4px;
+                }
+
+                .vertical-row {
+                    float: left;
+                    height: 20px;
+                    width: 1px;
+                    background-color: $white;
+                    opacity: 15%;
+                    margin-right: 16px;
+                    margin-left: 16px;
+                    margin-top: -2px;
+                }
+
+                .star {
+                    height: 16px;
+                    width: 16px;
+                    margin-right: 2px;
+                }
+
+                .thumbs-up, .clock {
+                    height: 20px;
+                    width: 20px;
+                    margin-top: -2px;
+                    
+                }
+            }
+        }
+
+        .showcase-footer {
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+            gap: 16px;
+
+            @include lg { justify-content: flex-start; padding-top: 150px; }
+
+            img {
+                height: 60px;
+                width: 60px;
+            }
+
+            .texts {
+                color: $white;
+
+                #p1 {
+                    font-weight: 700;
+                }
+
+                #p2 {
+                    margin-top: -10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+#tools {
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    .container {
+
+        .texts {
+            text-align: center;
+            padding-bottom: 40px;
+
+            h1 {
+                @include h2;
+                padding-bottom: 10px;
+
+                @include lg { @include h1; }
+            }
+
+            .p1 {
+                @include text-lg;
+                color: $gray-600;
+
+                @include lg {
+                    padding-left: 80px;
+                    padding-right: 80px;
+                }
+
+                @include xl {
+                    padding-left: 150px;
+                    padding-right: 150px;
+                }
+
+                @include xxl {
+                    padding-left: 240px;
+                    padding-right: 240px;
+                }
+            }
+        }
+
+        .toolboxes {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+
+            @include md {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                
+                place-items: center;
+            }
+
+            @include xl {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            @include xxl {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+
+            .toolbox {
+                height: 206px;
+                max-width: 305px;
+                width: 100%;
+                padding: 24px;
+                border-radius: 10px;
+                transition: all 0.15s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.101);
+                    transition: all 0.15s ease-in-out;
+                    cursor: pointer;
+                }
+
+                img {
+                    height: 56px;
+                    width: 56px;
+                }
+
+                .p2 {
+                    @include text-m;
+                    padding-top: 25px;
+                }
+            }
+        }
+    }
+}

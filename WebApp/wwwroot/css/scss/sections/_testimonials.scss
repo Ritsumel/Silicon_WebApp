@@ -1,0 +1,147 @@
+#testimonials {
+    background-color: $gray-100;
+
+    .container {
+        background-color: $gray-200;
+        padding-top: 60px;
+        padding-bottom: 80px;
+        border-radius: 10px;
+
+        @include lg {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            /* padding-left: 80px; */
+            gap: 80px;
+        }
+
+        @include xl {
+            padding-left: 80px;
+        }
+
+        @include xxl {
+            padding-left: 150px;
+        }
+
+        .app {
+            width: 447px;
+            height: 578px;
+            display: none;
+
+            @include lg {
+                display: grid;
+                
+            }
+        }
+
+        .box {
+            text-align: center;
+
+            @include lg {
+                text-align: start;
+                padding-top: 55px;
+            }
+
+            h1 {
+                @include h2;
+                text-align: center;
+                padding-bottom: 0px;
+
+                @include lg { 
+                    @include h2; 
+                    text-align: start; 
+                    padding-bottom: 20px;
+                    padding-right: 100px;
+                    padding-left: 0;
+                }
+
+                @include xl {
+                    @include h1; 
+                    text-align: start; 
+                    padding-bottom: 20px;
+                    padding-right: 100px;
+                }
+
+                @include xxl {
+                    padding-right: 120px;
+                }
+            }
+
+            .reviews {
+
+                @include md {
+                    display: flex;
+                    justify-content: center;
+                    gap: 100px;
+                }
+
+                @include lg {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0;
+                }
+
+                .review {
+                    padding-top: 40px;
+
+                    @include lg {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        align-items: end;
+                        padding-top: 20px;
+                    }
+
+                    .texts {
+
+                        p { 
+                            @include text-m; 
+                            color: $gray-600;
+                            margin-bottom: 1px;
+                        }
+    
+                        .star {
+                            height: 14px;
+                            width: 14px;
+                            margin-right: 2px;
+                        }
+    
+                        i { 
+                            color: #FFBA08;
+                            margin-right: 5px;
+    
+                        }
+    
+                        h4 {
+                            @include h4;
+                            padding-top: 10px;
+                            margin-bottom: 1px;
+                        }
+    
+                        .rating {
+                            @include standard-text;
+                            padding-bottom: 20px;
+                        }
+                    }
+
+                    .platform {
+
+                        @include lg {
+                            padding-bottom: 25px;
+                            padding-left: 30px;
+                        }
+
+                        @include xl {
+                            padding-bottom: 25px;
+                            margin-left: -30px;
+                            
+                        }
+
+                        img { 
+                            height: 52px; 
+                            width: 180px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

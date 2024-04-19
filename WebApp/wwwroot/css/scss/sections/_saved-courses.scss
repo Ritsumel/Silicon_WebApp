@@ -1,0 +1,240 @@
+#saved-courses {
+
+    .container {
+        display: block;
+        gap: 50px;
+
+        @include lg { display: flex; gap: 50px; }
+        @include xl { gap: 122px; }
+
+        .side-menu {
+            width: 100%;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include md {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+            }
+
+            @include lg { 
+                display: block; 
+                border-right: 1px solid #E2E5F1; 
+                max-width: 318px;
+                gap: 0;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .profile-picture {
+                    position: relative;
+                    padding-top: 40px;
+
+                    img {
+                        height: 120px;
+                        width: 120px;
+                    }
+    
+                    .refresh-btn {
+                        position: absolute;
+                        bottom: 0;
+                        left: 84px;
+                        border: 1px solid $gray-300;
+                        background-color: $white;
+                        border-radius: 50%;
+                        height: 36px;
+                        width: 36px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.064);
+
+                        img {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+
+                h5 { padding-top: 15px; }
+
+                p { margin-top: -7px; }
+            }
+
+            .menu-buttons {
+                padding-top: 15px;
+
+                .btn-menu {
+                    height: 50px;
+                    width: 306px;
+                    color: $gray-800;
+                    font-weight: 700;
+                    background-color: transparent;
+                    justify-content: start;
+
+                    &:hover {
+                        @include theme-shadow;
+                        background-color: $theme;
+                        color: $white;
+
+                        i {
+                            color: $white;
+                            transition: all 0.25s ease-in-out;
+                        }
+                    }
+
+                    i {
+                        color: $gray-600;
+                        transition: all 0.25s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .box {
+            padding-top: 56px;
+            padding-bottom: 30px;
+
+            @include lg { padding-bottom: 75px; }
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 20px;
+
+                .btn-theme {
+                    height: 44px;
+                    width: 149px;
+                    border: 1px solid #F9BEBE;
+                    background-color: $white;
+                    color: #EF4444;
+                    font-weight: 700;
+                    gap: 7px;
+
+                    &:hover {
+                        background-color: #F9BEBE;
+                    }
+
+                    img {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+
+            .courses {
+                display: grid;
+                gap: 2rem 1rem;
+       
+                @include md {
+                   grid-template-columns: repeat(2, 1fr);
+                }
+    
+                a { text-decoration: none; }
+
+                .course-card {
+                    width: 100%;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.059);
+            
+                    .text-s {
+                        margin-top: -5px;
+                    }
+            
+                    .price {
+                        margin-top: -10px;
+                        color: $theme;
+                        font-weight: 700;
+            
+                        .old-price {
+                            padding-left: 5px;
+                            font-weight: 300;
+                            color: $gray-600;
+                            text-decoration: line-through;
+                        }
+                    }
+            
+                    &-image {
+                        position: relative;
+            
+                        .best-seller-tag {
+                            position: absolute;
+                            height: 22px;
+                            width: 90px;
+                            background-color: #22C55E;
+                            border-radius: 5px;
+                            left: 16px;
+                            top: 16px;
+            
+                            p {
+                                @include text-s;
+                                color: #FFFFFF;
+                                padding-left: 8px;
+                            }
+                        }
+            
+                        .bookmark-tag {
+                            background-color: #FFFFFF;
+                            position: absolute;
+                            height: 36px;
+                            width: 36px;
+                            top: 16px;
+                            right: 16px;
+                            border-radius: 50%;
+                            border: none;
+
+                            i {
+                                line-height: 36px;
+                                color: $gray-800;
+                                transition: all 0.25s ease-in-out;
+                            }
+
+                            &:hover {
+                                i {
+                                    color: $theme;
+                                    transition: all 0.25s ease-in-out;
+                                }
+                            }
+                        }
+                    }
+            
+                    &-body {
+                        padding: 25px;
+                    }
+            
+                    &-footer {
+                        padding: 25px;
+                        margin-top: -45px;
+                        gap: 2rem;
+                        color: $gray-600;
+            
+                        &, * {
+                            display: flex;
+                            align-items: center;
+                        }
+            
+                        img {
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 5px;
+                        }
+            
+                        div {
+                            gap: .5rem;
+                        }
+            
+                        p {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

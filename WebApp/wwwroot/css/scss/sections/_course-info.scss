@@ -1,0 +1,138 @@
+#course-info {
+    padding-top: 50px;
+
+    @include lg { padding-top: 95px; }
+
+    .container {
+
+        @include lg {
+            display: grid;
+            grid-template-areas: "desc desc ci"
+                                 "lp lp ci";
+            align-items: center;
+
+            @include lg { column-gap: 20px; }
+
+            @include xl { column-gap: 90px; }
+
+            @include xxl { column-gap: 110px; }
+        }
+
+        .description {
+            grid-area: desc;
+            
+            h1 { 
+                @include h2;
+                padding-bottom: 15px;
+                text-align: center;
+
+                @include lg { @include h1; text-align: start; }
+            }
+
+            p {
+                text-align: center;
+
+                @include lg {
+                    padding-right: 30px;
+                    text-align: start;
+                }
+            }
+        }
+
+        .learning-points {
+            grid-area: lp;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include lg { display: grid; }
+
+            h3 {
+                padding-top: 10px;
+                padding-bottom: 15px;
+            }
+
+            .texts {
+                padding-bottom: 20px;
+
+                @include lg { padding-bottom: 0; }
+
+                p {  
+                    line-height: 1;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-top: -4px;
+    
+                    img {
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        .course-info {
+            grid-area: ci;
+            border: 1px solid #E2E5F1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.059);
+            height: 458px;
+            width: 100%;
+            padding: 40px;
+
+            @include lg {
+                width: 416px;
+                align-items: start;
+            }
+
+            h4 { 
+                margin-top: -20px;
+
+                @include lg { margin-top: 0; }
+            }
+
+            .texts {
+                p {  
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    margin-top: -8px;
+    
+                    img {
+                        height: 20px;
+                        width: 20px;
+                        margin-top: 2px;
+                    }
+                }
+            }
+
+            h2 {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                span {
+                    @include text-xl;
+                    color: #9397AD;
+                    text-decoration: line-through;
+                    text-decoration-thickness: 1px;
+                }
+            }
+
+            a {
+                height: 52px;
+                width: 100%;
+                cursor: pointer;
+
+                @include lg {
+                    width: 155px;
+                }
+            }
+        }
+    }
+}

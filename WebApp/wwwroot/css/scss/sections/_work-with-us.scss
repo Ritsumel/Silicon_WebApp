@@ -1,0 +1,79 @@
+#work-with-us {
+    padding-bottom: 50px;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+        background-color: $gray-100;
+        gap: 10px;
+
+        @include md {
+            text-align: start;
+            padding-left: 50px;
+            padding-right: 120px;
+        }
+
+        @include lg {
+            padding-left: 80px;
+            padding-right: 170px;
+        }
+
+        @include xl {
+            padding-left: 110px;
+            padding-right: 110px;
+        }
+
+        .box {
+            width: 526px;
+            padding-top: 95px;
+            padding-bottom: 95px;
+
+            p { @include text-lead; }
+
+            h1 { 
+                @include h2; 
+                line-height: 1.3;
+                padding-bottom: 30px;
+
+                @include lg { @include h1; }
+
+                span {
+                    color: $theme;
+                }
+            }
+
+            .btn-theme-s {
+                @include text-m;
+                color: $white;
+                font-weight: 500;
+
+                @include lg {
+                    width: 162px;
+                    height: 52px;
+                }
+            }
+        }
+    
+        .image {
+        
+            img {
+                display: none;
+
+                @include md {
+                    display: flex;
+                    width: 150%;
+                }
+    
+                @include xl {
+                    height: 378px;
+                    width: 526px;
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}

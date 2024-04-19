@@ -1,0 +1,94 @@
+#author-info {
+    padding-bottom: 40px;
+
+    .container {
+        position: relative;
+        display: flex;
+
+        .background {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            height: auto;
+            width: 100%;
+            
+            @include xxl { width: 1296px; }
+        }
+
+        .author {
+            height: 568px;
+            width: 100%;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            border-top: 1px solid #E2E5F1;
+            border-bottom: 1px solid #E2E5F1;
+            border-left: 1px solid #E2E5F1;
+
+            @include xxl { width: 526px; }
+        }
+
+        .box {
+            padding-top: 96px;
+            padding-bottom: 96px;
+            padding-left: 122px;
+            padding-right: 110px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .texts {
+
+                h5 { 
+                    @include text-xl;
+                    color: $white; 
+                    opacity: 50%; 
+                }
+
+                h1 {
+                    color: $white;
+                    margin-top: -5px;
+                    padding-bottom: 5px;
+                 }
+
+                p { 
+                    color: $white; 
+                    opacity: 70%;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                gap: 24px;
+
+                .btn-youtube {
+                    background-color: #EF4444;
+                    height: 44px;
+                    width: 199px;
+
+                    &:hover {
+                        text-decoration: none;
+                        background: $gray-700;
+                        color: $white;
+                    } 
+                }
+
+                .btn-facebook {
+                    background-color: #4C82F7;
+                    height: 44px;
+                    width: 179px;
+                    
+                    &:hover {
+                        text-decoration: none;
+                        background: $gray-700;
+                        color: $white;
+                    } 
+                }
+
+                img {
+                    height: 18px;
+                    width: 18px;
+                }
+            }
+        }
+    }
+}

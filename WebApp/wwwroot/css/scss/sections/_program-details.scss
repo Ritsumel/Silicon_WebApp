@@ -1,0 +1,59 @@
+#program-details {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    @include lg { padding-top: 80px; padding-bottom: 60px; }
+
+    .container {
+
+        h1 {
+            @include h2;
+            text-align: center;
+            padding-bottom: 40px;
+
+            @include lg { @include h1; text-align: start; }
+        }
+
+        .points {
+            position: relative;
+
+            @include lg { margin-right: 350px; }
+
+            @include xxl { margin-right: 450px; }
+
+            @include xxl { margin-right: 550px; }
+
+            .vl {
+                position: absolute;
+                z-index: -1;
+                border-left: 1px solid #E2E5F1;
+                height: 95%;
+                top: 0;
+                bottom: 0;
+                left: 38px;
+            }
+    
+            .point-card {
+                display: flex;
+                gap: 30px;
+                margin-bottom: 40px;
+    
+                img {
+                    height: 80px;
+                    width: 80px;
+                }
+    
+                .text {
+    
+                    h4 {
+    
+                    }
+    
+                    p {
+                        @include text-m;
+                    }
+                }
+            }
+        }
+    }
+}

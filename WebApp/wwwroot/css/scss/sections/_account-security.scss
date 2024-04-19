@@ -1,0 +1,265 @@
+#account-security {
+
+    .container {
+        display: block;
+        gap: 50px;
+
+        @include lg { display: flex; gap: 50px; }
+        @include xl { gap: 122px; }
+
+        .side-menu {
+            width: 100%;
+            border: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            @include md {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+            }
+
+            @include lg { 
+                display: block; 
+                border-right: 1px solid #E2E5F1; 
+                max-width: 318px;
+                gap: 0;
+            }
+
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .profile-picture {
+                    position: relative;
+                    padding-top: 40px;
+
+                    img {
+                        height: 120px;
+                        width: 120px;
+                    }
+    
+                    .refresh-btn {
+                        position: absolute;
+                        bottom: 0;
+                        left: 84px;
+                        border: 1px solid $gray-300;
+                        background-color: $white;
+                        border-radius: 50%;
+                        height: 36px;
+                        width: 36px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.064);
+
+                        img {
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+
+                h5 { padding-top: 15px; }
+
+                p { margin-top: -7px; }
+            }
+
+            .menu-buttons {
+                padding-top: 15px;
+
+                .btn-menu {
+                    height: 50px;
+                    width: 306px;
+                    color: $gray-800;
+                    font-weight: 700;
+                    background-color: transparent;
+                    justify-content: start;
+
+                    &:hover {
+                        @include theme-shadow;
+                        background-color: $theme;
+                        color: $white;
+
+                        i {
+                            color: $white;
+                            transition: all 0.25s ease-in-out;
+                        }
+                    }
+
+                    i {
+                        color: $gray-600;
+                        transition: all 0.25s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        .security-info {
+            width: 100%;
+            max-width: 1053px;
+            padding-top: 56px;
+            padding-bottom: 30px;
+
+            @include lg { padding-bottom: 75px; }
+
+            h2 { 
+                padding-bottom: 15px; 
+                text-align: center;
+
+                @include lg { text-align: start; }
+            }
+
+            h5 { 
+                color: $theme; 
+                padding-bottom: 15px; 
+                text-align: center;
+
+                @include lg { text-align: start; }
+            }
+
+            .change-password {
+
+                form {
+                    display: grid;
+                    gap: 0px;
+                    grid-template-columns: 1fr;
+                    grid-template-areas: "cp"
+                                         "np"
+                                         "cnp";
+
+                    @include lg {
+                        display: grid;
+                        gap: 24px;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-template-areas: "cp cp"
+                                             "np cnp";
+                    }
+    
+                    .current-password { grid-area: cp; }
+                    .new-password { grid-area: np; }
+                    .confirm-new-password { grid-area: cnp; }
+
+                    .current-password {
+                        padding-right: 0;
+
+                        @include lg { padding-right: 24px; }
+
+                        input { 
+                            width: 100%;
+
+                            @include lg { width: 50%; }
+                        }
+                    }
+
+                    label {
+                        display: block;
+                        color: $gray-900;
+                        outline: none;
+                        font-weight: 700;
+                        padding-bottom: 5px;
+    
+                        span { color: $gray-600; }
+                    }
+    
+                    input {
+                        display: block;
+                        height: 52px;
+                        width: 100%;
+                        outline: none;
+                        border: 1px solid $gray-400;
+                        border-radius: 10px;
+                        padding: 0 20px 0;
+                        color: $gray-700;
+                        margin-bottom: 20px;
+
+                        @include lg { margin-bottom: 0; }
+    
+                        &::placeholder {
+                            color: $gray-500;
+                        }
+                    }
+
+                    .buttons {
+                        display: flex;
+                        gap: 16px;
+                        padding-bottom: 25px;
+                        margin-top: 25px;
+
+                        @include lg { margin-top: 10px; }
+
+                        .btn-gray {
+                            height: 44px;
+                            width: 100%;
+                            font-weight: 500;
+
+                            @include lg { width: 103px; }
+                        }
+
+                        .btn-theme {
+                            height: 44px;
+                            width: 100%;
+
+                            @include lg { width: 176px; }
+                        }
+                    }
+                }
+            }
+
+            hr {
+                padding-top: 20px;
+            }
+
+            .delete-account {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @include lg { display: block; }
+
+                h5 { margin-bottom: -1px; }
+                
+                p { 
+                    padding-bottom: 5px;
+                    text-align: center;
+
+                    @include lg { text-align: start; }
+                 }
+
+                .form-check {
+                    padding-bottom: 30px;
+                    
+                    .form-check-input {
+                        width: 18px;
+                        height: 18px;
+                        border: 2px solid $gray-500;
+                        border-radius: 2px;
+                        appearance: none;
+
+                        &:checked {
+                            background-color: $theme;
+                            border-color: $theme;
+                        }
+                    }
+
+                    label {
+                        @include text-m;
+                        padding-left: 4px;
+                    }
+                }
+
+                .btn-theme {
+                    background-color: #EF4444;
+                    height: 44px;
+                    width: 100%;
+
+                    &:hover { background: $gray-700; }
+
+                    @include lg { width: 101px; }
+                }
+            }
+        }
+    }
+}
