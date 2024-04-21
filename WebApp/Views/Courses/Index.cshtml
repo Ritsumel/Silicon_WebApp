@@ -7,9 +7,9 @@
         <div class="container">
             
             <div class="category">
-                <a class="nav-link" href="/Index.html"><img class="home" src="/images/icons/home-icon.svg">Home</a>
-                <img class="next" src="/images/icons/next-icon.svg">
-                <a class="nav-link active" href="/courses/Courses.html">Courses</a>
+            <a class="nav-link" asp-action="Home" asp-controller="Default"><img class="home" src="~/images/icons/home-icon.svg" />Home</a>
+                <img class="next" src="~/images/icons/next-icon.svg" />
+                <a class="nav-link active" asp-action="Index" asp-controller="Courses">Courses</a>
             </div>
 
             <div class="navigation">
@@ -52,11 +52,12 @@
                                     <h2 class="h5">@course.Title</h2>
                                     <p class="text-s">@course.Author</p>
                                     <div class="pricing">
+                                    <div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enabled" : "")">@course.Price
                                         @if (!string.IsNullOrEmpty(course.DiscountPrice))
                                         {
                                             <span class="old-price">@course.DiscountPrice</span>
                                         }
-                                        <div class="price @(!string.IsNullOrEmpty(course.DiscountPrice)? "discount-enabled" : "")">@course.Price</div>
+                                    </div>
                                     </div>
                                     <hr>
                                 </div>
@@ -94,7 +95,7 @@
                 <a class="btn-theme-s" href="#">Work with us</a>
             </div>
             <div class="image">
-                <img src="~/images/desk-computer-illustration.svg" />
+                <img src="~/images/other/desk-computer-illustration.svg" />
             </div>
         </div>
     </section>

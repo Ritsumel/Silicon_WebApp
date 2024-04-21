@@ -1,0 +1,42 @@
+﻿.alert {
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 12px 1rem;
+    display: block;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.alert-dark {
+    background-color: var($gray-900);
+    color: var($gray-000);
+}
+
+.alert-gray {
+    background-color: var($gray-200);
+    color: var($gray-800);
+}
+
+.alert-info {
+    background-color: var($info);
+    color: var($gray-800);
+}
+
+.alert-success {
+    background-color: var($success);
+    color: var($gray-800);
+}
+
+.alert-warning {
+    background-color: var($warning);
+    color: var($gray-800);
+}
+
+.alert-danger {
+    background-color: var($danger);
+    color: var($gray-800);
+}

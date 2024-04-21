@@ -4,7 +4,7 @@
 <header>
     <div class="container">
         <a id="logo" asp-action="Home" asp-controller="Default">
-            <img src="~/images/silicon-logo-light_theme.svg" alt="silicon logotype" />
+            <img src="~/images/other/silicon-logo-light_theme.svg" alt="silicon logotype" />
         </a>
 
         <div id="menu">
@@ -15,7 +15,10 @@
                 {
                     <a asp-action="Index" asp-controller="Courses" class="menu-link">Courses</a>
                 }
-                <a asp-action="Contact" asp-controller="Default" class="menu-link">Contact</a>
+                else
+                {
+                    <a asp-action="Contact" asp-controller="Default" class="menu-link">Contact</a>
+                }            
             </nav>
         </div>
 
@@ -60,14 +63,14 @@
             <span>Dark</span>
         </div>
         <div class="account-buttons">
-            <button class="btn-gray"><i class="fa-solid fa-arrow-right-to-bracket"></i>Sign in</button>
-            <button class="btn-theme"><i class="fa-regular fa-user"></i>Sign up</button>
+            <button asp-action="SignIn" asp-controller="Auth" class="btn-gray"><i class="fa-solid fa-arrow-right-to-bracket"></i>Sign in</button>
+            <button asp-action="SignUp" asp-controller="Auth" class="btn-theme"><i class="fa-regular fa-user"></i>Sign up</button>
         </div>
         <div id="menu">
             <nav>
-                <a class="menu-link" href="#">Overview</a>
-                <a class="menu-link" href="#">Features</a>
-                <a class="menu-link" href="/courses">Courses</a>
+                <a asp-action="Home" asp-controller="Default" asp-fragment="showcase" class="menu-link">Overview</a>
+                <a asp-action="Home" asp-controller="Default" asp-fragment="features" class="menu-link">Features</a>
+                <a asp-action="Index" asp-controller="Courses" class="menu-link">Courses</a>
             </nav>
         </div>
     </div>

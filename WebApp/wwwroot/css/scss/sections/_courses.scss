@@ -9,35 +9,41 @@
             justify-content: center;
             gap: 10px;
 
-            @include lg { justify-content: flex-start; }
-    
+            @include lg {
+                justify-content: flex-start;
+            }
+
             a {
                 text-decoration: none;
                 color: $gray-600;
                 margin-top: -4px;
-    
-                &:hover { color: $theme; }
-    
-                &.active { color: $theme; }
+
+                &:hover {
+                    color: $theme;
+                }
+
+                &.active {
+                    color: $theme;
+                }
             }
-    
+
             .home {
                 height: 18px;
                 width: 18px;
                 margin-right: 5px;
                 margin-bottom: 2px;
             }
-    
+
             .next {
                 height: 16px;
                 width: 16px;
             }
         }
-    
+
         .navigation {
             display: block;
 
-            h1 { 
+            h1 {
                 @include h2;
                 text-align: center;
 
@@ -46,7 +52,9 @@
                 }
             }
 
-            @include lg { display: flex; }
+            @include lg {
+                display: flex;
+            }
 
             .bars {
                 margin-top: 0;
@@ -78,23 +86,23 @@
                         @include lg {
                             width: 240px;
                         }
-    
+
                         @include text-s;
                         color: $gray-700;
-    
+
                         option {
                             background-color: $white;
                         }
                     }
                 }
-    
+
                 .search-bar {
                     padding-bottom: 40px;
 
                     @include lg {
                         padding-bottom: 0;
                     }
-                    
+
                     input {
                         background-image: url('/images/icons/search-icon.svg');
                         background-position: calc(100% - 15px) 50%;
@@ -124,47 +132,53 @@
                 }
             }
         }
-    
+
         .grid {
-             display: grid;
-             gap: 2rem 1rem;
-             padding-bottom: 40px;
-    
-             @include md {
+            display: grid;
+            gap: 2rem 1rem;
+            padding-bottom: 40px;
+
+            @include md {
                 grid-template-columns: repeat(2, 1fr);
-             }
-    
-             @include lg {
+            }
+
+            @include lg {
                 grid-template-columns: repeat(3, 1fr);
-             }
+            }
         }
-    
-        a { text-decoration: none; }
-    
+
+        a {
+            text-decoration: none;
+        }
+
         .course-card {
             width: 100%;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.059);
-    
+
             .text-s {
                 margin-top: -5px;
             }
-    
-            .price {
-                margin-top: -10px;
-                color: $theme;
-                font-weight: 700;
-    
-                .old-price {
-                    padding-left: 5px;
-                    font-weight: 300;
-                    color: $gray-600;
-                    text-decoration: line-through;
+
+            .pricing {
+                display: flex;
+
+                .price {
+                    margin-top: -10px;
+                    color: $theme;
+                    font-weight: 700;
+
+                    .old-price {
+                        padding-left: 5px;
+                        font-weight: 300;
+                        color: $gray-600;
+                        text-decoration: line-through;
+                    }
                 }
             }
-    
+
             &-image {
                 position: relative;
-    
+
                 .best-seller-tag {
                     position: absolute;
                     height: 22px;
@@ -173,14 +187,14 @@
                     border-radius: 5px;
                     left: 16px;
                     top: 16px;
-    
+
                     p {
                         @include text-s;
                         color: #FFFFFF;
                         padding-left: 8px;
                     }
                 }
-    
+
                 .bookmark-tag {
                     background-color: #FFFFFF;
                     position: absolute;
@@ -197,69 +211,69 @@
                     }
                 }
             }
-    
+
             &-body {
                 padding: 25px;
             }
-    
+
             &-footer {
                 padding: 25px;
                 margin-top: -45px;
                 gap: 2rem;
                 color: $gray-600;
-    
+
                 &, * {
                     display: flex;
                     align-items: center;
                 }
-    
+
                 img {
                     height: 20px;
                     width: 20px;
                     margin-right: 5px;
                 }
-    
+
                 div {
                     gap: .5rem;
                 }
-    
+
                 p {
                     margin: 0;
                 }
             }
         }
-    
+
         nav {
             display: flex;
             justify-content: center;
             gap: 8px;
-    
+
             .pagination-single, .pagination-single-scroll {
                 height: 36px;
                 width: 36px;
                 border-radius: 5px;
                 background-color: $white;
                 transition: all 0.25s ease-in-out;
-    
+
                 &:hover {
                     background-color: $gray-200;
                 }
-    
+
                 &.active {
                     background-color: $theme;
                     box-shadow: 0px 10px 10px -3px #6365f13b;
-    
+
                     p {
                         color: $white;
                     }
                 }
-    
+
                 img {
-                   height: 18px;
-                   width: 18px;
-                   margin-bottom: 3px; 
+                    height: 18px;
+                    width: 18px;
+                    margin-bottom: 3px;
                 }
-    
+
                 p {
                     font-weight: 500;
                     color: $gray-800;

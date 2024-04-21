@@ -16,3 +16,12 @@ function handleProfileImageUpload() {
     }
     catch { }
 }
+
+const mobileBtn = document.querySelector('mobile-btn')
+
+mobileBtn.addEventListener('click', () => {
+    const menu = document.querySelector('#mobile-menu')
+
+    const isOpen = menu.getAttribute('aria-expanded') == 'true'
+    menu.setAttribute('aria-expanded', !isOpen)
+})
